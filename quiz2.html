@@ -15,12 +15,13 @@
     <div class="start_btn"><button>Names of Something</button></div>
     <!-- Info Box -->
     <div class="info_box">
-        <div class="info-title"><span>Some Rules of this Quiz</span></div>
+        <div class="info-title"><span>Some Rules of this Activity</span></div>
         <div class="info-list">
             <div class="info">1. You will have only <span>120 Seconds</span> per each question.</div>
             <!-- <div class="info">2. Once you select your answer, it can't be undone.</div> -->
             <!-- <div class="info">3. You can't select any option once time goes off.</div> -->
-            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+            <div class="info">2. Every one should send your words in the chat box personally to host,not to everyone.</div>
+            <div class="info">3. Send your words with its count in the end of the message (i.e, no.of words).</div>
             <!-- <div class="info">5. You'll get points on the basis of your correct answers.</div> -->
         </div>
         <div class="buttons">
@@ -34,7 +35,7 @@
             <div class="title">Names of Something</div>
             <div class="timer">
                 <div class="time_left_txt">Time Left</div>
-                <div class="timer_sec">15</div>
+                <div class="timer_sec" id="timer-text">120</div>
             </div>
             <div class="time_line"></div>
         </header>
@@ -47,6 +48,9 @@
                 <!-- Here I've inserted options from JavaScript -->
             </div>
             <div style="display: flex;flex-direction: row;">
+                <div>
+                    <button id="next-qstn" onclick="previousQuestion()" style="height: 40px;padding: 0 13px;font-size: 15px; cursor: pointer;border: none;outline: none;color: #007bff;background-color: white;border: 1px solid #007bff;border-radius: 4px;margin-right: 20px;">Previous</button>
+                </div>
                 <div>
                     <button id="next-qstn" onclick="nextQuestion()" style="height: 40px;padding: 0 13px;font-size: 15px; cursor: pointer;border: none;outline: none;color: white;background-color: #007bff;border: 1px solid #007bff;border-radius: 4px;">Next</button>
                 </div>

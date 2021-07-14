@@ -91,20 +91,21 @@ function showQuetions(index) {
 }
 
 function nextQuestion() {
-  console.log("called");
   if (index < questions.length-1) {
     index++;
     showQuetions(index);
+    clearInterval(counter);
+    document.getElementById('timer-text').innerHTML = '120';
   }
 }
-// let questions = [
-// 'Things you find in a classroom',
-// 'Names of Desserts',
-// 'Things you find at seaside',
-// 'Names of clothing brands',
-// 'Things that are blue in color',
-// 'Names of cities in USA',
-// ]
+function previousQuestion(){
+  if(index>0){
+    index--;
+    showQuetions(index);
+    clearInterval(counter);
+    document.getElementById('timer-text').innerHTML = '120';
+  }
+}
 
 // creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
@@ -159,6 +160,7 @@ function startTimer(time) {
     if (time < 0) {
       //if timer is less than 0
       clearInterval(counter); //clear counter
+      alert('Time up');
       timeText.textContent = "Time Off"; //change the time text to time off
       const allOptions = option_list.children.length; //getting all option items
       let correcAns = questions[que_count].answer; //getting correct answer from array
